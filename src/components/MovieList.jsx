@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import GlobalAPI from "../Services/GlobalAPI";
 import MovieCard from "./MovieCard";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
+import LargeMovieCard from "./LargeMovieCard";
 function MovieList({ genreId, index_ }) {
   const [movieList, setMovieList] = useState([]);
   const elementRef = useRef(null);
@@ -40,7 +41,7 @@ function MovieList({ genreId, index_ }) {
         {movieList.map((item, index) => (
           <>
             {index_ % 3 == 0 ? (
-              <HrMovieCard movie={item} />
+              <LargeMovieCard movie={item} />
             ) : (
               <MovieCard movie={item} />
             )}
